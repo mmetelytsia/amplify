@@ -17,14 +17,14 @@ const config = {
             }
         ]
     },
-  //   plugins: [
-  //   new CompressionPlugin({
-  //           test: /\.js$|\.css$|\.html$/,
-  //           algorithm: 'gzip',
-  //
-  //       }
-  //       )
-  // ]
+    plugins: [
+    new CompressionPlugin({
+            test: /\.js$|\.css$|\.html$/,
+            algorithm: 'gzip',
+
+        }
+        )
+  ]
 };
 module.exports = config;
 

@@ -1,15 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-// class HelloMessage extends React.Component {
-//   render() {
-//     return <div>Hello World!</div>;
-//   }
-// }
-//
-// var mountNode = document.getElementById("app");
-// ReactDOM.render(<HelloMessage />, mountNode);
-
 class App extends React.Component {
 
     constructor(props) {
@@ -19,10 +10,18 @@ class App extends React.Component {
         }
     }
 
-    onClick(e) {
+    increment(e) {
         this.setState({
             count: this.state.count + 1
         });
+    }
+
+    decrement(e) {
+      if (this.state.count > 0) {
+          this.setState({
+              count: this.state.count - 1
+          });
+      }
     }
 
     render() {
@@ -34,7 +33,8 @@ class App extends React.Component {
         return (
             <div>
                 <h2>Hello World!{exclamations}</h2>
-                <button onClick={this.onClick.bind(this)}>Add exclamation mark!</button>
+                <button onClick={this.increment.bind(this)}>Add exclamation mark!</button>
+                <button onClick={this.decrement.bind(this)}>Remove exclamation mark!</button>
             </div>
         )
     }
