@@ -14,17 +14,22 @@ const config = {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: 'babel-loader'
-            }
+            },
+            {
+                test: /\.css$/,
+                use: [{loader: "style-loader"},
+                    {loader: "css-loader"}]
+            },
         ]
     },
-    plugins: [
-    new CompressionPlugin({
-            test: /\.js$|\.css$|\.html$/,
-            algorithm: 'gzip',
-
-        }
-        )
-  ]
+  //   plugins: [
+  //   new CompressionPlugin({
+  //           test: /\.js$|\.css$|\.html$/,
+  //           algorithm: 'gzip',
+  //
+  //       }
+  //       )
+  // ]
 };
 module.exports = config;
 
